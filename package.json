@@ -1,0 +1,20 @@
+{
+  "name": "Sandbox-social-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theophilus96/Sandbox-social-client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theophilus96/Sandbox-social-client/issues"
+  },
+  "homepage": "https://github.com/theophilus96/Sandbox-social-client#readme"
+}
