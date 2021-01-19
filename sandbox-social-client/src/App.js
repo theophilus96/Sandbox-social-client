@@ -9,29 +9,31 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 //components
 import Navbar from "./components/Navbar";
-import theme from "./util/theme";
+import themeObject from "./util/theme";
 //pages
 import home from "./pages/home";
-import login from "./pages/Login";
+import Login from "./pages/Login";
 import signup from "./pages/signup";
+import axios from 'axios';
+
+const theme = createMuiTheme(themeObject);
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <MuiThemeProvider theme={theme}>
       <div className="App">
         <Router>
           <Navbar />
           <div className="container">
             <Switch>
               <Route exact path="/" component={home} />
-              <Route exact path="/login" component={login} />
+              <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={signup} />
             </Switch>
           </div>
         </Router>
       </div>
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 
