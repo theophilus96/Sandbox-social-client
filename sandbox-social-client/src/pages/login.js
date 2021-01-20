@@ -15,7 +15,7 @@ const styles = (theme) => ({
   ...theme.spreadThis,
 });
 
-class Login extends Component {
+class login extends Component {
   constructor() {
     super();
     this.state = {
@@ -39,6 +39,7 @@ class Login extends Component {
       .post("/login", userData)
       .then((res) => {
         console.log(res.data);
+        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`);
         this.setState({
           loading: false,
         });
@@ -63,7 +64,7 @@ class Login extends Component {
       <Grid container className={classes.form}>
         <Grid item sm />
         <Grid item sm>
-          <img src={SandboxLogo} alt="monkey" className={classes.image} />
+          <img src={SandboxLogo} alt="Sandbox" className={classes.image} />
           <Typography variant="h2" className={classes.pageTitle}>
             Login
           </Typography>
@@ -121,10 +122,10 @@ class Login extends Component {
   }
 }
 
-Login.propTypes = {
+login.propTypes = {
   classes: PropTypes.object.isRequired,
   loginUser: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Login);
+export default withStyles(styles)(login);
