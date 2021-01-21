@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 import Scream from "../components/Scream";
 import ScreamSkeleton from "../util/ScreamSkeleton";
+import Profile from "../components/Profile";
 //Redux
 import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
@@ -24,7 +25,7 @@ export class home extends Component {
           {recentScreamsMarkup}
         </Grid>
         <Grid item sm={4} xs={12}>
-          {/* <Profile /> */}
+          <Profile />
           <h1>profile</h1>
         </Grid>
       </Grid>
