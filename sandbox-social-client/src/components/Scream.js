@@ -11,7 +11,9 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 //Icons
-import ChatIcon from '@material-ui/icons/Chat';
+import ChatIcon from "@material-ui/icons/Chat";
+// Redux
+import { connect } from "react-redux";
 
 const styles = {
   card: {
@@ -41,6 +43,10 @@ class Scream extends Component {
         screamId,
         likeCount,
         commentCount,
+      },
+      user: {
+        authenticated,
+        credentials: { handle },
       },
     } = this.props;
     return (
@@ -83,7 +89,10 @@ class Scream extends Component {
 
 Scream.propTypes = {
   scream: PropTypes.object.isRequired,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
 };
 
-export default (withStyles(styles)(Scream));
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
+export default connect(mapStateToProps)(withStyles(styles)(Scream));
