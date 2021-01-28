@@ -23,6 +23,8 @@ import { SET_AUTHENTICATED } from "./redux/types";
 import { logoutUser, getUserData } from "./redux/actions/userActions";
 
 const theme = createMuiTheme(themeObject);
+axios.defaults.baseURL =
+  "https://asia-southeast2-sandbox-social.cloudfunctions.net/api";
 
 const token = localStorage.FBIdToken;
 if (token) {

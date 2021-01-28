@@ -4,6 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 import MyButton from "../util/MyButton";
+import ProfileSkeleton from "../util/ProfileSkeleton";
 // MUI stuff
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -23,7 +24,17 @@ const styles = (theme) => ({
   ...theme.spreadThis,
 });
 
-export class Profile extends Component {
+class Profile extends Component {
+  handleImageChange = (event) => {
+    const image = event.target.files[0];
+    const formData = new FormData();
+    formData.append("image", image, image.name);
+    this.props.uploadImage(formData);
+  };
+  handleEditPicture = () => {
+    const fileInput = document.getElementById("imageInput");
+    fileInput.click();
+  };
   render() {
     const {
       classes,
@@ -33,6 +44,7 @@ export class Profile extends Component {
         authenticated,
       },
     } = this.props;
+    console.log("props = ", this.props);
 
     let profileMarkup = !loading ? (
       authenticated ? (
@@ -40,8 +52,20 @@ export class Profile extends Component {
           <div className={classes.profile}>
             <div className="image-wrapper">
               <img src={imageUrl} alt="profile" className="profile-image" />
-              
-            
+
+              <input
+                type="file"
+                id="imageInput"
+                hidden="hidden"
+                onChange={this.handleImageChange}
+              />
+              <MyButton
+                tip="Edit profile picture"
+                onClick={this.handleEditPicture}
+                btnClassName="button"
+              >
+                <EditIcon color="primary" />
+              </MyButton>
             </div>
             <hr />
             <div className="profile-details">
@@ -78,6 +102,7 @@ export class Profile extends Component {
             <MyButton tip="Logout" onClick={this.handleLogout}>
               <KeyboardReturn color="primary" />
             </MyButton>
+            {/* <EditDetails /> */}
           </div>
         </Paper>
       ) : (
@@ -106,7 +131,7 @@ export class Profile extends Component {
         </Paper>
       )
     ) : (
-      <h1>profile</h1>
+      <ProfileSkeleton />
     );
     return profileMarkup;
   }

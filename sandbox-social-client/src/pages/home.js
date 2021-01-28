@@ -26,7 +26,6 @@ export class home extends Component {
         </Grid>
         <Grid item sm={4} xs={12}>
           <Profile />
-          <h1>profile</h1>
         </Grid>
       </Grid>
     );
