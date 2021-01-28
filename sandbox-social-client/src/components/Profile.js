@@ -36,6 +36,9 @@ class Profile extends Component {
     const fileInput = document.getElementById("imageInput");
     fileInput.click();
   };
+  handleLogout = () => {
+    this.props.logoutUser();
+  };
   render() {
     const {
       classes,
@@ -45,7 +48,6 @@ class Profile extends Component {
         authenticated,
       },
     } = this.props;
-    console.log("props = ", this.props);
 
     let profileMarkup = !loading ? (
       authenticated ? (
@@ -53,7 +55,6 @@ class Profile extends Component {
           <div className={classes.profile}>
             <div className="image-wrapper">
               <img src={imageUrl} alt="profile" className="profile-image" />
-
               <input
                 type="file"
                 id="imageInput"
@@ -134,6 +135,7 @@ class Profile extends Component {
     ) : (
       <ProfileSkeleton />
     );
+
     return profileMarkup;
   }
 }

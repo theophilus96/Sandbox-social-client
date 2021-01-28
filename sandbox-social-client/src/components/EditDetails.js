@@ -27,16 +27,15 @@ export class EditDetails extends Component {
     bio: "",
     website: "",
     location: "",
-    open: "",
+    open: false,
   };
   mapUserDetailsToState = (credentials) => {
     this.setState({
       bio: credentials.bio ? credentials.bio : "",
-      website: credentials.website ? credentials.bio : "",
-      location: credentials.location ? credentials.bio : "",
+      website: credentials.website ? credentials.website : "",
+      location: credentials.location ? credentials.location : "",
     });
   };
-
   handleOpen = () => {
     this.setState({ open: true });
     this.mapUserDetailsToState(this.props.credentials);
@@ -48,6 +47,7 @@ export class EditDetails extends Component {
     const { credentials } = this.props;
     this.mapUserDetailsToState(credentials);
   }
+
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
