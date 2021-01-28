@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import EditDetails from "./EditDetails";
 import MyButton from "../util/MyButton";
 import ProfileSkeleton from "../util/ProfileSkeleton";
 // MUI stuff
@@ -102,7 +103,7 @@ class Profile extends Component {
             <MyButton tip="Logout" onClick={this.handleLogout}>
               <KeyboardReturn color="primary" />
             </MyButton>
-            {/* <EditDetails /> */}
+            <EditDetails />
           </div>
         </Paper>
       ) : (
