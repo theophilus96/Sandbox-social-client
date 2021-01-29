@@ -6,6 +6,7 @@ import relativeTime from "dayjs/plugin/relativeTime";
 import PropTypes from "prop-types";
 import MyButton from "../util/MyButton";
 import LikeButton from "./LikeButton";
+import DeleteScream from "./DeleteScream";
 // MUI Stuff
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -41,7 +42,7 @@ class Scream extends Component {
         createdAt,
         userImage,
         userHandle,
-        screamId,
+        postId,
         likeCount,
         commentCount,
       },
@@ -50,10 +51,10 @@ class Scream extends Component {
         credentials: { handle },
       },
     } = this.props;
-    // const deleteButton =
-    //   authenticated && userHandle === handle ? (
-    //     <DeleteScream screamId={screamId} />
-    //   ) : null;
+    const deleteButton =
+      authenticated && userHandle === handle ? (
+        <DeleteScream postId={postId} />
+      ) : null;
     return (
       <Card className={classes.card}>
         <CardMedia
@@ -70,19 +71,19 @@ class Scream extends Component {
           >
             {userHandle}
           </Typography>
-          {/* {deleteButton} */}
+          {deleteButton}
           <Typography variant="body2" color="textSecondary">
             {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
-          <LikeButton screamId={screamId} />
+          <LikeButton postId={postId} />
           <span>{likeCount} Likes</span>
           <MyButton tip="comments">
             <ChatIcon color="primary" />
           </MyButton>
           <span>{commentCount} comments</span>
           {/* <ScreamDialog
-            screamId={screamId}
+            postId={postId}
             userHandle={userHandle}
             openDialog={this.props.openDialog}
           /> */}

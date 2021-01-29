@@ -32,10 +32,10 @@ export const getScreams = () => (dispatch) => {
       });
     });
 };
-export const getScream = (screamId) => (dispatch) => {
+export const getScream = (postId) => (dispatch) => {
   dispatch({ type: LOADING_UI });
   axios
-    .get(`/scream/${screamId}`)
+    .get(`/scream/${postId}`)
     .then((res) => {
       dispatch({
         type: SET_SCREAM,
@@ -65,9 +65,9 @@ export const postScream = (newScream) => (dispatch) => {
     });
 };
 // Like a scream
-export const likeScream = (screamId) => (dispatch) => {
+export const likeScream = (postId) => (dispatch) => {
   axios
-    .get(`/scream/${screamId}/like`)
+    .get(`/scream/${postId}/like`)
     .then((res) => {
       dispatch({
         type: LIKE_SCREAM,
@@ -77,9 +77,9 @@ export const likeScream = (screamId) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 // Unlike a scream
-export const unlikeScream = (screamId) => (dispatch) => {
+export const unlikeScream = (postId) => (dispatch) => {
   axios
-    .get(`/scream/${screamId}/unlike`)
+    .get(`/scream/${postId}/unlike`)
     .then((res) => {
       dispatch({
         type: UNLIKE_SCREAM,
@@ -89,9 +89,9 @@ export const unlikeScream = (screamId) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 // Submit a comment
-export const submitComment = (screamId, commentData) => (dispatch) => {
+export const submitComment = (postId, commentData) => (dispatch) => {
   axios
-    .post(`/scream/${screamId}/comment`, commentData)
+    .post(`/scream/${postId}/comment`, commentData)
     .then((res) => {
       dispatch({
         type: SUBMIT_COMMENT,
@@ -106,11 +106,11 @@ export const submitComment = (screamId, commentData) => (dispatch) => {
       });
     });
 };
-export const deleteScream = (screamId) => (dispatch) => {
+export const deleteScream = (postId) => (dispatch) => {
   axios
-    .delete(`/scream/${screamId}`)
+    .delete(`/scream/${postId}`)
     .then(() => {
-      dispatch({ type: DELETE_SCREAM, payload: screamId });
+      dispatch({ type: DELETE_SCREAM, payload: postId });
     })
     .catch((err) => console.log(err));
 };

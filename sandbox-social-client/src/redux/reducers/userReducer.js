@@ -43,7 +43,7 @@ export default function userReducer(state = initialState, action) {
           ...state.likes,
           {
             userHandle: state.credentials.handle,
-            screamId: action.payload.screamId,
+            postId: action.payload.postId,
           },
         ],
       };
@@ -51,7 +51,7 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         likes: state.likes.filter(
-          (like) => like.screamId !== action.payload.screamId
+          (like) => like.postId !== action.payload.postId
         ),
       };
     case MARK_NOTIFICATIONS_READ:

@@ -8,14 +8,14 @@ import Profile from "../components/Profile";
 import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
 
-export class home extends Component {
+class home extends Component {
   componentDidMount() {
     this.props.getScreams();
   }
   render() {
     const { screams, loading } = this.props.data;
     let recentScreamsMarkup = !loading ? (
-      screams.map((scream) => <Scream key={scream.screamId} scream={scream} />)
+      screams.map((scream) => <Scream key={scream.postId} scream={scream} />)
     ) : (
       <ScreamSkeleton />
     );

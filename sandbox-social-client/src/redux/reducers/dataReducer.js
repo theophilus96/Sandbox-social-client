@@ -40,16 +40,16 @@ export default function dataReducer(state = initialState, action) {
           ...state.likes,
           {
             userHandle: state.credentials.handle,
-            screamId: action.payload.screamId,
+            postId: action.payload.postId,
           },
         ],
       };
     case UNLIKE_SCREAM:
       let index = state.screams.findIndex(
-        (scream) => scream.screamId === action.payload.screamId
+        (scream) => scream.postId === action.payload.postId
       );
       state.screams[index] = action.payload;
-      if (state.scream.screamId === action.payload.screamId) {
+      if (state.scream.postId === action.payload.postId) {
         state.scream = action.payload;
       }
       return {
@@ -57,7 +57,7 @@ export default function dataReducer(state = initialState, action) {
       };
     case DELETE_SCREAM:
       index = state.screams.findIndex(
-        (scream) => scream.screamId === action.payload
+        (scream) => scream.postId === action.payload
       );
       state.screams.splice(index, 1);
       return {
