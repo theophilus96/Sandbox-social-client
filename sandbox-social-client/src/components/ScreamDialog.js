@@ -4,7 +4,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import MyButton from "../../util/MyButton";
 import LikeButton from "./LikeButton";
 import Comments from "./Comments";
-import CommentForm from "./CommentForm";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 // material ui
@@ -59,7 +58,7 @@ export class ScreamDialog extends Component {
   handleClose = () => {
     this.setState({ open: false });
   };
-  
+
   render() {
     const {
       classes,
@@ -107,7 +106,7 @@ export class ScreamDialog extends Component {
           <span>{commentCount} comments</span>
         </Grid>
         <hr className={classes.visibleSeparator} />
-        <CommentForm postId={postId} />
+        {/* <CommentForm postId={postId} /> */}
         <Comments comments={comments} />
       </Grid>
     );
