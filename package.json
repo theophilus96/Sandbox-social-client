@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/theophilus96/Sandbox-social-client/issues"
   },
-  "homepage": "https://github.com/theophilus96/Sandbox-social-client#readme"
+  "homepage": "https://github.com/theophilus96/Sandbox-social-client#readme",
+  "dependencies": {}
 }

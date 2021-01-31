@@ -4,7 +4,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import MyButton from "../util/MyButton";
 import LikeButton from "./LikeButton";
 import Comments from "./post/Comments";
-import CommentForm from "./post/CommentForm"
+import CommentForm from "./post/CommentForm";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 // material ui
@@ -51,13 +51,31 @@ const styles = (theme) => ({
 export class ScreamDialog extends Component {
   state = {
     open: false,
+    oldPath: "",
+    newPath: "",
   };
+  componentDidMount() {
+    if (this.props.openDialog) {
+      this.handleOpen();
+    }
+  }
   handleOpen = () => {
-    this.setState({ open: true });
+    let oldPath = window.location.pathname;
+
+    const { userHandle, postId } = this.props;
+    const newPath = `/users/${userHandle}/scream/${postId}`;
+
+    if (oldPath === newPath) oldPath = `/users/${userHandle}`;
+
+    window.history.pushState(null, null, newPath);
+
+    this.setState({ open: true, oldPath, newPath });
     this.props.getScream(this.props.postId);
   };
   handleClose = () => {
+    window.history.pushState(null, null, this.state.oldPath);
     this.setState({ open: false });
+    this.props.clearErrors();
   };
 
   render() {
