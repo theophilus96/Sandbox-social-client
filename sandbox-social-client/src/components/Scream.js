@@ -7,8 +7,15 @@ import PropTypes from "prop-types";
 import MyButton from "../util/MyButton";
 import LikeButton from "./LikeButton";
 import DeleteScream from "./DeleteScream";
-import ScreamDialog from "./ScreamDialog"
+import ScreamDialog from "./ScreamDialog";
 // MUI Stuff
+import CardActions from "@material-ui/core/CardActions";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
+import CardHeader from "@material-ui/core/CardHeader";
+import IconButton from "@material-ui/core/IconButton";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -30,6 +37,10 @@ const styles = {
   content: {
     padding: 25,
     objectFit: "cover",
+  },
+  avatar: {
+    width: 150,
+    height: 150,
   },
 };
 
@@ -58,11 +69,21 @@ class Scream extends Component {
       ) : null;
     return (
       <Card className={classes.card}>
-        <CardMedia
+        <CardHeader
+          avatar={
+            <Avatar
+              src={userImage}
+              className={classes.avatar}
+              component={Link}
+              to={`/users/${userHandle}`}
+            ></Avatar>
+          }
+        />
+        {/* <CardMedia
           image={userImage}
           title="Profile image"
           className={classes.image}
-        />
+        /> */}
         <CardContent className={classes.content}>
           <Typography
             variant="h5"
@@ -77,6 +98,7 @@ class Scream extends Component {
             {dayjs(createdAt).fromNow()}
           </Typography>
           <Typography variant="body1">{body}</Typography>
+
           <LikeButton postId={postId} />
           <span>{likeCount} Likes</span>
           <MyButton tip="comments">

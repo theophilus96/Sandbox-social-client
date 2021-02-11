@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import SandboxLogo from "../images/new sandbox logo.png";
+import SandboxLogo from "../images/faviconlogo.png";
 // MUI Stuff
+import Container from '@material-ui/core/Container';
+import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -15,6 +17,29 @@ import { loginUser } from "../redux/actions/userActions";
 
 const styles = (theme) => ({
   ...theme.spreadThis,
+  paper: {
+    marginTop: theme.spacing(12),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.primary.main,
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    alignSelf: "center",
+    justifyContent: "center",
+    display: "flex",
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+    textAlign: "center",
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
 });
 
 class login extends Component {
@@ -55,15 +80,18 @@ class login extends Component {
     const { errors } = this.state;
 
     return (
-      <Grid container className={classes.form}>
-        <Grid item sm />
-        <Grid item sm>
-          <img src={SandboxLogo} alt="Sandbox" className={classes.image} />
-          <Typography variant="h2" className={classes.pageTitle}>
+      <Container component="main" maxWidth="xs">
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar} src={SandboxLogo} alt="Sandbox">
+            {/* <img src={SandboxLogo} alt="Sandbox" className={classes.image} /> */}
+          </Avatar>
+          <Typography component="h1" variant="h5" className={classes.pageTitle}>
             Login
           </Typography>
-          <form noValidate onSubmit={this.handleSubmit}>
+          <form noValidate onSubmit={this.handleSubmit} className={classes.form}>
             <TextField
+              variant="outlined"
+              margin="normal"
               id="email"
               name="email"
               type="email"
@@ -74,8 +102,12 @@ class login extends Component {
               value={this.state.email}
               onChange={this.handleChange}
               fullWidth
+              autoComplete="email"
+              autoFocus
             />
             <TextField
+              variant="outlined"
+              margin="normal"
               id="password"
               name="password"
               type="password"
@@ -86,6 +118,7 @@ class login extends Component {
               value={this.state.password}
               onChange={this.handleChange}
               fullWidth
+              autoComplete="current-password"
             />
             {errors.general && (
               <Typography variant="body2" className={classes.customError}>
@@ -98,6 +131,7 @@ class login extends Component {
               color="primary"
               className={classes.button}
               disabled={loading}
+              fullWidth
             >
               Login
               {loading && (
@@ -109,9 +143,13 @@ class login extends Component {
               dont have an account ? sign up <Link to="/signup">here</Link>
             </small>
           </form>
+        </div>
+        {/* <Grid item sm />
+        <Grid item sm>
+          
         </Grid>
-        <Grid item sm />
-      </Grid>
+        <Grid item sm /> */}
+      </Container>
     );
   }
 }

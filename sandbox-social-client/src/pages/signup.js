@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import SandboxLogo from "../images/new sandbox logo.png";
+import SandboxLogo from "../images/faviconlogo.png";
 // MUI Stuff
+import Avatar from "@material-ui/core/Avatar";
+import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -14,6 +16,28 @@ import { connect } from "react-redux";
 import { signupUser } from "../redux/actions/userActions";
 const styles = (theme) => ({
   ...theme.spreadThis,
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.primary.main,
+    width: theme.spacing(7),
+    height: theme.spacing(7),
+    alignSelf: "center",
+    justifyContent: "center",
+    display: "flex",
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
 });
 
 export class signup extends Component {
@@ -59,15 +83,24 @@ export class signup extends Component {
     } = this.props;
     const { errors } = this.state;
     return (
-      <Grid container className={classes.form}>
-        <Grid item sm />
-        <Grid item sm>
-          <img src={SandboxLogo} alt="Sandbox" className={classes.image} />
-          <Typography variant="h2" className={classes.pageTitle}>
-            SignUp
+      <Container component="main" maxWidth="xs">
+        
+        <div className={classes.paper}>
+          <Avatar
+            className={classes.avatar}
+            src={SandboxLogo}
+            alt="Sandbox"
+          ></Avatar>
+          <Typography component="h1" variant="h5" className={classes.pageTitle}>
+            Sign Up
           </Typography>
-          <form noValidate onSubmit={this.handleSubmit}>
+          <form
+            noValidate
+            onSubmit={this.handleSubmit}
+            className={classes.form}
+          >
             <TextField
+              variant="outlined"
               id="email"
               name="email"
               type="email"
@@ -80,6 +113,7 @@ export class signup extends Component {
               fullWidth
             />
             <TextField
+              variant="outlined"
               id="password"
               name="password"
               type="password"
@@ -92,6 +126,7 @@ export class signup extends Component {
               fullWidth
             />
             <TextField
+              variant="outlined"
               id="confirmPassword"
               name="confirmPassword"
               type="password"
@@ -104,6 +139,7 @@ export class signup extends Component {
               fullWidth
             />
             <TextField
+              variant="outlined"
               id="handle"
               name="handle"
               type="text"
@@ -121,6 +157,7 @@ export class signup extends Component {
               </Typography>
             )}
             <Button
+              fullWidth
               type="submit"
               variant="contained"
               color="primary"
@@ -137,9 +174,8 @@ export class signup extends Component {
               Already have an account ? Login <Link to="/Login">here</Link>
             </small>
           </form>
-        </Grid>
-        <Grid item sm />
-      </Grid>
+        </div>
+      </Container>
     );
   }
 }
