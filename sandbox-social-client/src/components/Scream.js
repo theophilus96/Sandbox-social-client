@@ -29,7 +29,9 @@ const styles = {
   card: {
     position: "relative",
     display: "flex",
-    marginBottom: 20,
+    marginBottom: 10,
+    marginLeft: 5,
+    marginRight: 10,
   },
   image: {
     minWidth: 200,
