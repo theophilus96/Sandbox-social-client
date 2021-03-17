@@ -6,7 +6,6 @@ import SandboxLogo from "../images/faviconlogo.png";
 // MUI Stuff
 import Container from '@material-ui/core/Container';
 import Avatar from "@material-ui/core/Avatar";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";

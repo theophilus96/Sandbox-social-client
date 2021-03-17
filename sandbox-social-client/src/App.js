@@ -3,10 +3,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import jwtDecode from "jwt-decode";
 //Material UI
-import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
+// import MuiThemeProvider from "@material-ui/core/styles/MuiThemeProvider";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import { ThemeProvider } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 //components
 import Navbar from "./components/Navbar";
 import themeObject from "./util/theme";

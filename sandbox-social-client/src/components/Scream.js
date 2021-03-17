@@ -9,16 +9,10 @@ import LikeButton from "./LikeButton";
 import DeleteScream from "./DeleteScream";
 import ScreamDialog from "./ScreamDialog";
 // MUI Stuff
-import CardActions from "@material-ui/core/CardActions";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-
 import CardHeader from "@material-ui/core/CardHeader";
-import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from "@material-ui/icons/MoreVert";
 import Avatar from "@material-ui/core/Avatar";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 //Icons
 import ChatIcon from "@material-ui/icons/Chat";
