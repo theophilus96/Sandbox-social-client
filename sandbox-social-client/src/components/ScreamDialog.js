@@ -13,6 +13,8 @@ import DialogContent from "@material-ui/core/DialogContent";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
+import CardHeader from "@material-ui/core/CardHeader";
 // Icons
 import CloseIcon from "@material-ui/icons/Close";
 import UnfoldMore from "@material-ui/icons/UnfoldMore";
@@ -25,10 +27,18 @@ import { getScream, clearErrors } from "../redux/actions/dataActions";
 const styles = (theme) => ({
   ...theme.spreadThis,
   profileImage: {
-    maxWidth: 200,
-    height: 200,
-    borderRadius: "50%",
-    objectFit: "cover",
+    // maxWidth: 200,
+    // height: 200,
+    // borderRadius: "50%",
+    // objectFit: "cover",
+    borderColor: "#768bff",
+    border: "2px solid #768bff",
+    "@media (min-width: 415px)": {
+      width: 150,
+      height: 150,
+      borderColor: "#768bff",
+      border: "2px solid #768bff",
+    },
   },
   dialogContent: {
     padding: 20,
@@ -38,13 +48,22 @@ const styles = (theme) => ({
     left: "90%",
   },
   expandButton: {
+    marginLeft: 'auto',
+    "@media (min-width: 415px)": {
     position: "absolute",
     left: "90%",
+    },
   },
   spinnerDiv: {
     textAlign: "center",
     marginTop: 50,
     marginBottom: 50,
+  },
+  username: {
+    color: "primary",
+  },
+  date: {
+    color: "secondary",
   },
 });
 
@@ -99,24 +118,29 @@ export class ScreamDialog extends Component {
       </div>
     ) : (
       <Grid container spacing={1}>
-        <Grid item sm={5}>
-          <img src={userImage} alt="Profile" className={classes.profileImage} />
+        <Grid item sm={4}>
+          {/* <img src={userImage} className={classes.profileImage} /> */}
+            <Avatar
+              src={userImage}
+              className={classes.profileImage}
+              component={Link}
+              to={`/users/${userHandle}`}
+              alt="Profile"
+            ></Avatar>
+          
         </Grid>
-        <Grid item sm={7}>
-          <Typography
-            component={Link}
-            color="primary"
-            variant="h5"
-            to={`/users/${userHandle}`}
-          >
-            @{userHandle}
-          </Typography>
+        <Grid item sm={8}>
+          <Link to={`/users/${userHandle}`} style={{ textDecoration: "none" }}>
+            <h3 component={Link} className={classes.username}>
+              @{userHandle}
+            </h3>
+          </Link>
           <hr className={classes.invisibleSeparator} />
-          <Typography variant="body2" color="textSecondary">
+          <h6 variant="body2" color="textSecondary" className={classes.date}>
             {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
-          </Typography>
+          </h6>
           <hr className={classes.invisibleSeparator} />
-          <Typography variant="body1">{body}</Typography>
+          <h5 variabnt="body1">{body}</h5>
           <LikeButton postId={postId} />
           <span>{likeCount} likes</span>
           <MyButton tip="comments">
@@ -133,7 +157,7 @@ export class ScreamDialog extends Component {
       <Fragment>
         <MyButton
           onClick={this.handleOpen}
-          tip="Expand scream"
+          tip="Expand thread"
           tipClassName={classes.expandButton}
         >
           <UnfoldMore color="primary" />

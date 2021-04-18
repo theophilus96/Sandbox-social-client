@@ -10,6 +10,10 @@ import ProfileSkeleton from "../util/ProfileSkeleton";
 //redux
 import { connect } from "react-redux";
 import { getUserData } from "../redux/actions/dataActions";
+//test css
+import "../components/css/libs.css";
+import "../components/css/theme.css";
+
 export class user extends Component {
   state = {
     profile: null,

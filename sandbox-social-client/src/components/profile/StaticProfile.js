@@ -14,6 +14,12 @@ import CalendarToday from "@material-ui/icons/CalendarToday";
 
 const styles = (theme) => ({
   ...theme.spreadThis,
+  paperBackground: {
+    color: theme.palette.tertiary.contrastText,
+    padding: 20,
+    borderColor: theme.palette.primary.light,
+    border: "2px solid #768bff",
+  },
 });
 
 const StaticProfile = (props) => {
@@ -23,30 +29,23 @@ const StaticProfile = (props) => {
   } = props;
 
   return (
-    <Paper className={classes.paper}>
+    <Paper className={classes.paperBackground}>
       <div className={classes.profile}>
         <div className="image-wrapper">
           <img src={imageUrl} alt="profile" className="profile-image" />
         </div>
-        <hr />
         <div className="profile-details">
-          <MuiLink
-            component={Link}
-            to={`/users/${handle}`}
-            color="primary"
-            variant="h5"
-          >
-            @{handle}
+          <MuiLink component={Link} to={`/users/${handle}`} color="primary">
+            <h2>@{handle}</h2>
           </MuiLink>
-          <hr />
-          {bio && <Typography variant="body2">{bio}</Typography>}
-          <hr />
+          {bio && <span>{bio}</span>}
           {location && (
             <Fragment>
+              <br />
               <LocationOn color="primary" /> <span>{location}</span>
-              <hr />
             </Fragment>
           )}
+          <br />
           {website && (
             <Fragment>
               <LinkIcon color="primary" />
@@ -54,7 +53,7 @@ const StaticProfile = (props) => {
                 {" "}
                 {website}
               </a>
-              <hr />
+              <br />
             </Fragment>
           )}
           <CalendarToday color="primary" />{" "}

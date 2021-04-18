@@ -1,22 +1,41 @@
 import { createMuiTheme } from "@material-ui/core/styles";
+import HKGroteskPro from "../components/fonts/HK Grotesk Pro/HKGroteskPro-Regular.woff2"
 
+const HKGrotesk = {
+  fontFamily: 'HKGroteskPro',
+  fontStyle: 'normal',
+  fontDisplay: 'swap',
+  fontWeight: 400,
+  src: `
+    url(${HKGroteskPro}) format('woff2')
+  `,
+  unicodeRange:
+    'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF',
+};
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: "#618833",
-      main: "#8bc34a",
-      dark: "#a2cf6e",
-      contrastText: "#fff",
+      light: "#768bff",
+      main: "#335eea",
+      dark: "#0035b7",
+      contrastText: "#ffffff",
     },
     secondary: {
-      light: "#ff6333",
-      main: "#ff3d00",
-      dark: "#b22a00",
-      contrastText: "#fff",
+      light: "#7f94c0",
+      main: "#506690",
+      dark: "#223c62",
+      contrastText: "#ffffff",
+    },
+    tertiary: {
+      light: "#eeffff",
+      main: "#bbdefb",
+      dark: "#8aacc8",
+      contrastText: "#000000",
     },
   },
   spreadThis: {
     typography: {
+      fontFamily: HKGrotesk,
       useNextVariants: true,
     },
     form: {
@@ -78,7 +97,7 @@ const theme = createMuiTheme({
           verticalAlign: "middle",
         },
         "& a": {
-          color: "#00bcd4",
+          color: "#335eea",
         },
       },
       "& hr": {

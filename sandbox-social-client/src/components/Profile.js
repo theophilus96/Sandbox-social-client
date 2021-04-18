@@ -23,6 +23,13 @@ import { logoutUser, uploadImage } from "../redux/actions/userActions";
 
 const styles = (theme) => ({
   ...theme.spreadThis,
+  paperBackground: {
+    color: theme.palette.tertiary.contrastText,
+    padding: 20,
+    borderColor: theme.palette.primary.light,
+    border: "2px solid #768bff",
+    minWidth: 221,
+  },
 });
 
 class Profile extends Component {
@@ -51,10 +58,10 @@ class Profile extends Component {
 
     let profileMarkup = !loading ? (
       authenticated ? (
-        <Paper className={classes.paper}>
-          <div className={classes.profile}>
+        <Paper className={classes.paperBackground} >
+          <div className={classes.profile} >
             <div className="image-wrapper">
-              <img src={imageUrl} alt="profile" className="profile-image" />
+              <img src={imageUrl} alt="profile" className="profile-image" borderColor="primary" borderSize="20"/>
               <input
                 type="file"
                 id="imageInput"
@@ -69,25 +76,22 @@ class Profile extends Component {
                 <EditIcon color="primary" />
               </MyButton>
             </div>
-            <hr />
+            <br />
             <div className="profile-details">
-              <MuiLink
-                component={Link}
-                to={`/users/${handle}`}
-                color="primary"
-                variant="h5"
-              >
-                @{handle}
+              <MuiLink component={Link} to={`/users/${handle}`} color="primary">
+                <h2>@{handle}</h2>
               </MuiLink>
-              <hr />
-              {bio && <Typography variant="body2">{bio}</Typography>}
-              <hr />
+              {bio && (
+                  <span>{bio}</span>
+              )}
+              <br />
               {location && (
                 <Fragment>
                   <LocationOn color="primary" /> <span>{location}</span>
-                  <hr />
+                 
                 </Fragment>
               )}
+              <br />
               {website && (
                 <Fragment>
                   <LinkIcon color="primary" />
@@ -95,7 +99,7 @@ class Profile extends Component {
                     {" "}
                     {website}
                   </a>
-                  <hr />
+                  <br />
                 </Fragment>
               )}
               <CalendarToday color="primary" />{" "}
@@ -115,7 +119,7 @@ class Profile extends Component {
           <div className={classes.buttons}>
             <Button
               variant="contained"
-              color="primary"
+              color="primary.dark"
               component={Link}
               to="/login"
             >
@@ -123,7 +127,7 @@ class Profile extends Component {
             </Button>
             <Button
               variant="contained"
-              color="secondary"
+              color="primary.dark"
               component={Link}
               to="/signup"
             >

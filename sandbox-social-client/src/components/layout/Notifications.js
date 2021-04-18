@@ -34,11 +34,9 @@ class Notifications extends Component {
     this.props.markNotificationsRead(unreadNotificationsIds);
   };
   render() {
-    // const notifications = this.props.notifications;
-    // const anchorEl = this.state.anchorEl;
+    const notifications = this.props.notifications;
+    const anchorEl = this.state.anchorEl;
 
-    const { notifications } = this.props;
-    const { anchorEl } = this.state;
     dayjs.extend(relativeTime);
 
     let notificationsIcon;
@@ -77,10 +75,11 @@ class Notifications extends Component {
               <Typography
                 component={Link}
                 color="default"
-                variant="body1"
-                to={`/users/${not.recipient}/scream/${not.postId}`}
+                to={`/users/${not.recipient}/scream/${not.screamId}`}
               >
-                {not.sender} {verb} your scream {time}
+                <h5>
+                  {not.sender} {verb} your scream {time}
+                </h5>
               </Typography>
             </MenuItem>
           );

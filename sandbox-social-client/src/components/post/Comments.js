@@ -5,18 +5,36 @@ import { Link } from "react-router-dom";
 import dayjs from "dayjs";
 // MUI
 import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
+import Avatar from "@material-ui/core/Avatar";
 
 const styles = (theme) => ({
   ...theme.spreadThis,
   commentImage: {
-    maxWidth: "100%",
-    height: 100,
-    objectFit: "cover",
-    borderRadius: "50%",
+    // maxWidth: "100%",
+    // height: 100,
+    // objectFit: "cover",
+    // borderRadius: "50%",
+
+    borderColor: "#768bff",
+    border: "2px solid #768bff",
+    "@media (min-width: 415px)": {
+      width: 150,
+      height: 150,
+      borderColor: "#768bff",
+      border: "2px solid #768bff",
+    },
   },
   commentData: {
-    marginLeft: 20,
+    marginLeft: 10,
+    "@media (min-width: 415px)": {
+      marginLeft: 40,
+    },
+  },
+  username: {
+    color: "primary",
+  },
+  date: {
+    color: "secondary",
   },
 });
 
@@ -25,35 +43,51 @@ class Comments extends Component {
     const { comments, classes } = this.props;
 
     return (
-      <Grid container>
+      <Grid container spacing={1}>
         {comments.map((comment, index) => {
           const { body, createdAt, userImage, userHandle } = comment;
           return (
             <Fragment key={createdAt}>
               <Grid item sm={12}>
                 <Grid container>
-                  <Grid item sm={2}>
-                    <img
+                  <Grid item sm={3}>
+                    {/* <img
                       src={userImage}
                       alt="comment"
                       className={classes.commentImage}
-                    />
+                    /> */}
+                    <Avatar
+                      src={userImage}
+                      className={classes.commentImage}
+                      component={Link}
+                      to={`/users/${userHandle}`}
+                      alt="comment"
+                    ></Avatar>
                   </Grid>
                   <Grid item sm={9}>
                     <div className={classes.commentData}>
-                      <Typography
-                        variant="h5"
-                        component={Link}
+                      <Link
                         to={`/users/${userHandle}`}
-                        color="primary"
+                        style={{ textDecoration: "none" }}
                       >
-                        {userHandle}
-                      </Typography>
-                      <Typography variant="body2" color="textSecondary">
+                        <h3
+                          component={Link}
+                          color="primary"
+                          className={classes.username}
+                        >
+                          {userHandle}
+                        </h3>
+                      </Link>
+
+                      <h6
+                        variant="body2"
+                        color="textSecondary"
+                        className={classes.date}
+                      >
                         {dayjs(createdAt).format("h:mm a, MMMM DD YYYY")}
-                      </Typography>
+                      </h6>
                       <hr className={classes.invisibleSeparator} />
-                      <Typography variabnt="body1">{body}</Typography>
+                      <h5 variant="body1">{body}</h5>
                     </div>
                   </Grid>
                 </Grid>

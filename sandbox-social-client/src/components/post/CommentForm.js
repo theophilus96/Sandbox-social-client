@@ -41,7 +41,7 @@ export class CommentForm extends Component {
     const errors = this.state.errors;
 
     const commentFormMarkup = authenticated ? (
-      <Grid item sm={12} style={{ textAlign: "center" }}>
+      <Grid item xs={12} style={{ textAlign: "center" }} sm container direction="column">
         <form onSubmit={this.handleSubmit}>
           <TextField
             name="body"
