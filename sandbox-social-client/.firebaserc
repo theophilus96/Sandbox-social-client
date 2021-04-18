@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "sandbox-social"
+  },
+  "targets": {
+    "sandbox-social": {
+      "hosting": {
+        "webdesign": [
+          "sandbox-socialA"
+        ]
+      }
+    }
   }
 }
