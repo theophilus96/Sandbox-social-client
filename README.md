@@ -1,7 +1,6 @@
 # Sandbox-social-client
- 
-<iframe src="https://sandbox-sociala.web.app/" title="webDesign" width="1000" height="500"></iframe>
 
+<iframe src="https://sandbox-sociala.web.app/" title="webDesign" width="1000" height="500"></iframe>
 
 ## Web Design Assignment
 
@@ -10,56 +9,56 @@
 - DM
 - Table of Figures Table of Contents
 - Planning & Research
-   - Target Audience
-   - Design
+  - Target Audience
+  - Design
 - Wireframes & Prototypes
 - Self Evaluation
-   - Lessons learned
-   - Improvements
-   - Victories
-   - Failures
-   - Future goals
+  - Lessons learned
+  - Improvements
+  - Victories
+  - Failures
+  - Future goals
 - Design - Visual Aesthetics
-   - Main Theme
-   - Construction Green Theme
-   - Dark Mode
+  - Main Theme
+  - Construction Green Theme
+  - Dark Mode
 - Development
 - Chapter 1:
 - Software Architecture Design
-   - Front-end of Sandbox Social Platform
-      - 1.1.1 Home Page
-      - 1.1.2 User Page
-      - 1.1.3 Sign In/Sign Up Page
-   - Backend of Sandbox Social Platform
-      - 1.2.1 Cloud Functions
-   - Database of Sandbox Social Platform
-      - 1.3.1 User Schema
-      - 1.3.2 Post Schema
-      - 1.3.3 Comment Schema
-      - 1.3.4 Notification Schema
-      - 1.3.5 Like Schema
+  - Front-end of Sandbox Social Platform
+    - 1.1.1 Home Page
+    - 1.1.2 User Page
+    - 1.1.3 Sign In/Sign Up Page
+  - Backend of Sandbox Social Platform
+    - 1.2.1 Cloud Functions
+  - Database of Sandbox Social Platform
+    - 1.3.1 User Schema
+    - 1.3.2 Post Schema
+    - 1.3.3 Comment Schema
+    - 1.3.4 Notification Schema
+    - 1.3.5 Like Schema
 - Chapter 2:
 - Implementation
-   - 2.1 Front end
-      - 2.1.1 One message feed/post
-      - 2.1.2 Comment thread
-      - 2.1.3 Profile
-      - 2.1.4 Post form modal
-      - 2.1.5 NavBar
-      - 2.1.6 Like button
-      - 2.1.7 Notification
-      - 2.1.8 Comments
-      - 2.1.9 Home page layout
-      - 2.1.10 Login page
-      - 2.1.11 Theme
-   - 2.2 Back end
-      - 2.2.1 Authentication
-      - 2.2.2 Profile
-      - 2.2.3 Message Feed
-      - 2.2.4 Post
-      - 2.2.5 Comment
-      - 2.2.6 Notification
-      - 2.2.7 Like
+  - 2.1 Front end
+    - 2.1.1 One message feed/post
+    - 2.1.2 Comment thread
+    - 2.1.3 Profile
+    - 2.1.4 Post form modal
+    - 2.1.5 NavBar
+    - 2.1.6 Like button
+    - 2.1.7 Notification
+    - 2.1.8 Comments
+    - 2.1.9 Home page layout
+    - 2.1.10 Login page
+    - 2.1.11 Theme
+  - 2.2 Back end
+    - 2.2.1 Authentication
+    - 2.2.2 Profile
+    - 2.2.3 Message Feed
+    - 2.2.4 Post
+    - 2.2.5 Comment
+    - 2.2.6 Notification
+    - 2.2.7 Like
 - Reference
 - Figure 1: Dependencies for front-end Table of Figures
 - Figure 2: Dependencies for backend
@@ -86,7 +85,6 @@
 - Figure 23: Create notificaiton for database on comment
 - Figure 24: Create Like in database
 - Figure 25: Delete Like in database
-
 
 ## Planning & Research
 
@@ -145,7 +143,6 @@ Design?node-id=205%3A1581&scaling=min-zoom&page-id=0%3A
 I have gained an in-depth knowledge of using Cascading Style Sheets (CSS) as well as using
 JavaScript to improve the user interface of the website.
 
-
 Throughout the web design lessons as well as the project, I have learned valuable web
 programming skills. Before this course started, I was familiar with simple web programming and
 was stronger with handling the backend of a website. This was because my course, Information
@@ -182,7 +179,6 @@ Creating a full-stack website from scratch would also be considered a victory fo
 front-end and back-end of the website was tough to make. However, I managed to complete it in
 the end and learned a lot through the process. I would consider this a victory.
 
-
 ### Failures
 
 There are no failures from me. But if I had to point out one point where I wished that I could have
@@ -211,6 +207,7 @@ Design?node-id=0%3A
 ```
 Figure 2 : Main theme
 ```
+
 ### Construction Green Theme
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FWDP6EFLQXvaIP32LbKFZ72%2FDM8001-Web-Design%3Fnode-id%3D215%253A0" allowfullscreen></iframe>
@@ -223,6 +220,7 @@ Design?node-id=215%3A
 ```
 Figure 3 : Construction Green Theme
 ```
+
 ### Dark Mode
 
 <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FWDP6EFLQXvaIP32LbKFZ72%2FDM8001-Web-Design%3Fnode-id%3D220%253A3687" allowfullscreen></iframe>
@@ -252,6 +250,7 @@ Figure 5 :Sandbox Architectural Design
 ```
 Figure 6 :Sandbox Sitemap Design
 ```
+
 ### Front-end of Sandbox Social Platform
 
 The front-end of the social platform, is created using React.js. Since React.js is a JavaScript library,
@@ -267,6 +266,7 @@ o Comment
 o Profile
 o Notifications
 ```
+
 - User
 
 #### • Sign In/ Sign Up
@@ -297,7 +297,6 @@ show the number of likes received and the same goes for the comments.
 There will be a delete button at the top right of your post. This gives you an option to delete your
 post in case of an error or mistake.
 
-
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/WebsiteScreenShots%2FScreenshot%202021-04-18%20at%203.15.12%20PM.png?alt=media&token=53047e1c-e0a5-48a0-b7bc-d49b8551f1b1" width="200">
 ```
 Figure 9 : + icon in the navigation bar
@@ -320,7 +319,6 @@ Figure 11 : Full thread for post made by test
 Comments will be shown when you click on the expand button on the bottom right button. It will
 show all the comments related to this post. A user comment will contain the user’s profile picture,
 name, message, and date of creation.
-
 
 To post a comment, write your comment at the comment line notated by the grey font “Comment
 on the post” and click the submit button.
@@ -423,7 +421,6 @@ decides to edit their profile.
 
 "users": {
 
-
 "bio": { "Type": "string" },
 
 "createdAt": { "Type": "string" },
@@ -469,7 +466,6 @@ when another user likes, unlike, and comment on the post.
 
 }
 
-
 #### 1.3.3 Comment Schema
 
 When a user creates a comment, it records the comment body, the time of creation, the post
@@ -509,7 +505,6 @@ comment-type activity or a like-type activity, and whether the notification has 
 
 "read": { "Type": "boolean" },
 
-
 "recipient": { "Type": "string" },
 
 "sender": { "Type": "string" },
@@ -534,7 +529,6 @@ Liking a post records the name of the user who likes the post and the post ID it
 }
 
 }
-
 
 ## Chapter 2:
 
@@ -562,9 +556,11 @@ react JavaScript library for building UI components
 React-router-
 dom
 ```
+
 ```
 Provide Dynamic Routing
 ```
+
 ```
 dayjs JavaScript library that manipulates dates
 jwt-decode Library that helps with decoding JWT tokens
@@ -577,9 +573,11 @@ Firebase-admin Firebase admin SDK
 Firebase-
 functions
 ```
+
 ```
 Firebase functions SDK
 ```
+
 ```
 uuidv4 universally unique identifier library
 Figure 21 : Important libraries used for Sandbox Social Platform
@@ -599,6 +597,7 @@ the message, and the actions, such as like, comment, and expand. We even have ou
 here to adapt to the size of the screen.
 
 #### 2.1.2 Comment thread
+
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_22.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
 Figure 23 : CSS for comment thread
@@ -606,7 +605,6 @@ Figure 23 : CSS for comment thread
 Here is the CSS style of the comment thread. Here, we style the expand button that you see in the previous
 message post. When you click the expand button on the message post, it will bring you to the comment
 thread. I even included a spinner to show that the comments for this post are loading.
-
 
 #### 2.1.3 Profile
 
@@ -617,6 +615,7 @@ Figure 24 : CSS for profile
 This is the CSS of the profile section. Here, we design the background, padding, and border.
 
 #### 2.1.4 Post form modal
+
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_25.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
 Figure 25 : CSS for Post form
@@ -624,8 +623,8 @@ Figure 25 : CSS for Post form
 This is the CSS of the modal in which you post a message. There are the submit button and the
 close button. I even included a spinner to show that the post is loading.
 
-
 #### 2.1.5 NavBar
+
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_26.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
 Figure 26 : Code for Navigation bar
@@ -634,15 +633,14 @@ Here is the code for the navigation bar. It checks if you are an authenticated u
 message icon and notifications icon. If you are not authenticated, you will see the login, home, and signup
 icons instead.
 
-
 #### 2.1.6 Like button
+
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_27.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
 Figure 27 : Code for Like button
 ```
 Here is the code and CSS for the like button. The like button will show a “hollow” icon if it has
 not been liked and a “full” icon if it has been liked.
-
 
 #### 2.1.7 Notification
 
@@ -664,7 +662,6 @@ Here is the CSS style for the comment section. Here, we design the avatar, messa
 of the comment. We even included media queries here so that it adapts to the screen size of the
 browser.
 
-
 #### 2.1.9 Home page layout
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_30.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
@@ -674,7 +671,6 @@ Figure 30 : Code for home page
 This is the CSS and code for the home page layout. It displays the message feed as well as the
 profile of the authenticated user. The media queries included here switch the profile to the top of
 the page when the screen size becomes smaller.
-
 
 #### 2.1.10 Login page
 
@@ -690,7 +686,6 @@ is followed by the actual form for logging in.
 
 This long piece of code is the theme for the whole website. It includes the CSS for all the
 components as well as the font being used. The font that I choose is ‘HKGrotesk Pro’.
-
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_32.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -711,7 +706,6 @@ The figure above is an explanation of how JWT works. When the user logins in wit
 and password, the server would create a unique token for them. When they request anything from
 the server, they will now have to validate with the token. The server will then check if it is an
 authenticated user or if the token itself is still valid. If the token expires, the server will not respond.
-
 
 2.2.1.1 Validation
 
@@ -737,7 +731,7 @@ Figure 36 : Validation code
 2 .2.1.2 Sign Up
 
 1. We first import the Firebase admin SDK so that we can create the admin functions. We
-    then initialize the app and export both the Firebase admin and the Firestore database.
+   then initialize the app and export both the Firebase admin and the Firestore database.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_37.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -759,6 +753,7 @@ If the user’s data is valid, we then check if their handle(name) is being used
 we respond by telling them that the name has already been taken. If it is not in use, we
 proceed with the creation of the user.
 ```
+
 ```
 We then get the user’s Unique identifier and the user’s identifier token from the data of the
 creation for the user. We call the getIdToken() method to get the token from the user data.
@@ -777,8 +772,8 @@ Figure 39 : User Sign up code
 ```
 
 4. Users can now sign up using the API endpoint https://asia-southeast2-sandbox-
-    social.cloudfunctions.net/api + the sign-up route. This is because we have exported it to
-    the Firebase Cloud Functions API and posted the sign-up route.
+   social.cloudfunctions.net/api + the sign-up route. This is because we have exported it to
+   the Firebase Cloud Functions API and posted the sign-up route.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_40.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -792,6 +787,7 @@ Figure 40 : Sign up API
 For the sign-in section, we require the user’s login credentials and if everything is validated,
 we send them a response.
 ```
+
 ```
 We first receive the user’s email and password which will be validated. After the validation,
 if the data is alright, we will proceed with the signing in of the user and the validated user
@@ -814,7 +810,7 @@ Figure 42 : Sign in API
 2 **.2.2.1 Get User’s Data**
 
 1. We have created a function which allows anyone to see their profile. They only need to
-    type in the API endpoints for the user’s collection with the user’s handle(name).
+   type in the API endpoints for the user’s collection with the user’s handle(name).
 
 ```
 If the user is found, we will return the data to the next section. If not, we will return a JSON
@@ -834,9 +830,8 @@ Figure 44 : Convert to JSON
 ```
 2 **.2.2.2 Add User’s Data**
 
-
 1. For adding and editing the user’s details, we have created a function that receives input
-    from the user. It then sends the data for reduction with the function for reducing user details.
+   from the user. It then sends the data for reduction with the function for reducing user details.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_45.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -867,8 +862,8 @@ Figure 48 : Pull data from Post collection and convert into JSON
 #### 2.2.4 Post
 
 1. To post a message, the user will have to submit the JSON data to the server. The JSON
-    data will have to contain a message-body if not an error will appear. If all the required
-    fields are found in the JSON body, a post will be created with 0 likes and comments.
+   data will have to contain a message-body if not an error will appear. If all the required
+   fields are found in the JSON body, a post will be created with 0 likes and comments.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_49.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -876,7 +871,7 @@ Figure 49 : Validate post data
 ```
 
 2. The post will then be sent to the database to be added to the post collection. You will then
-    be able to view the post on the message feed.
+   be able to view the post on the message feed.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_50.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -885,9 +880,9 @@ Figure 50 : Send post to database
 #### 2.2.5 Comment
 
 1. To comment on a post, we follow the same method as the post.The user will have to submit
-    the JSON data to the server. The JSON data will have to contain a message-body if not an
-    error will appear. The data for the comment will have to contain the post ID of the post it
-    is commenting on, this is the additional requirement that is different from a post.
+   the JSON data to the server. The JSON data will have to contain a message-body if not an
+   error will appear. The data for the comment will have to contain the post ID of the post it
+   is commenting on, this is the additional requirement that is different from a post.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_51.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -895,8 +890,8 @@ Figure 51 : Validate Comment data
 ```
 
 2. If all the required fields are found in the JSON body, it will search for the post in the posts
-    collection. If the post is found, the comment count will be updated to increase by 1. The
-    comment will then be added to the comments collection in the database.
+   collection. If the post is found, the comment count will be updated to increase by 1. The
+   comment will then be added to the comments collection in the database.
 
 <img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_52.png?alt=media&token=ae91a52b-d8db-4ee9-8939-3ae1df275d8a" width="500">
 ```
@@ -952,14 +947,12 @@ Figure 56 : Delete Like in database
 ## Reference
 
 1. “the collaborative interface design tool.,” Figma. [Online]. Available:
-    https://www.figma.com/. [Accessed: 1 8 - Apr-2021].
+   https://www.figma.com/. [Accessed: 1 8 - Apr-2021].
 2. “UI: A popular React UI framework,” Material. [Online]. Available: https://materialui.com/.
-    [Accessed: 18 - Apr- 2021 ].
+   [Accessed: 18 - Apr- 2021 ].
 3. J. T. Mark Otto, “Bootstrap,” Bootstrap · The most popular HTML, CSS, and JS library in
-    the world. [Online]. Available: https://getbootstrap.com/. [Accessed: 18 - Apr- 2021 ].
+   the world. [Online]. Available: https://getbootstrap.com/. [Accessed: 18 - Apr- 2021 ].
 4. “React – A JavaScript library for building user interfaces,” – A JavaScript library for
-    building user interfaces. [Online]. Available: https://reactjs.org/. [Accessed: 18 - Apr- 2021 ].
+   building user interfaces. [Online]. Available: https://reactjs.org/. [Accessed: 18 - Apr- 2021 ].
 5. “Firebase Brand Guidelines,” Google. [Online]. Available:
-    https://firebase.google.com/brand-guidelines. [Accessed: 18 - Apr- 2021 ].
-
-
+   https://firebase.google.com/brand-guidelines. [Accessed: 18 - Apr- 2021 ].
