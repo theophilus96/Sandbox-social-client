@@ -243,9 +243,13 @@ large amount of data. According to present-day website development architecture,
 components of a website are the front-end, back-end, and database. The figure below illustrates
 the software architecture of this social media platform.
 
+<img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_5.png?alt=media&token=90d8a9d7-abb7-45c2-94c2-9f240506db67" width="500">
+
 ```
 Figure 5 :Sandbox Architectural Design
 ```
+
+<img src="https://firebasestorage.googleapis.com/v0/b/sandbox-social.appspot.com/o/documentation%2FPicture_6.png?alt=media&token=90d8a9d7-abb7-45c2-94c2-9f240506db67" width="500">
 
 ```
 Figure 6 :Sandbox Sitemap Design
